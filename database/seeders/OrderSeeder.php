@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Sku;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class OrderSeeder extends Seeder
 {

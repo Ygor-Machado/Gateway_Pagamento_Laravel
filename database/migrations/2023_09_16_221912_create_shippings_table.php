@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('addresses', function (Blueprint $table) {
+        Schema::create('shippings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('order_id')->constrained();
             $table->string('address');
             $table->string('city');
             $table->string('state');
@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('district');
             $table->string('number');
             $table->string('complement')->nullable();
+            $table->string('tracking_code')->nullable();
+            $table->string('status')->nullable(); //ENUM
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('addresses');
+        Schema::dropIfExists('shippings');
     }
 };
